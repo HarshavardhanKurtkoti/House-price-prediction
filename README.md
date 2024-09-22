@@ -16,20 +16,20 @@ A machine learning web application that predicts house prices based on various f
 ## How to Run Locally
 
 1. Clone the repository:
-'''
+```
 git clone https://github.com/HarshavardhanKurtkoti/House-price-prediction.git
 cd House-price-prediction
-'''
+```
 
 2. Install dependencies:
-'''
+```
 pip install -r requirements.txt
-'''
+```
 
 3.  Run the application:
-'''
+```
 python app.py
-'''
+```
 
 4. Open your browser and navigate to http://localhost:5000 to access the app.
 
@@ -37,12 +37,12 @@ python app.py
 ## API Usage
 
 To make predictions using the API, send a POST request to /predict_api:
-'''
+```
 POST http://localhost:5000/predict_api
 {
     "data": [value1, value2, ..., valueN]
 }
-'''
+```
 Where value1, value2, etc., represent the feature values for the house you want to predict.
 
 ## Deployment
