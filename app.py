@@ -29,4 +29,4 @@ def predict():
     output=LRmodel.predict(final_input)[0]
     return render_template("home.html",prediction_text="The predicted House price is {}".format(output))
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=False)
