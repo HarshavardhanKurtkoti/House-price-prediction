@@ -2,10 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            background-color: #8DFFF4;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            margin: auto;
+        }
+        fieldset {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            width: 400px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        .btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello</h1>
+    <center>
+        <h1>House Price Prediction</h1>
+    </center>
+    <hr size='2' color='black'>
+    <center>
+    <fieldset>
+        <legend align="center"><b>Fill in Details</b></legend>
+        <form action="{{ url_for('predict') }}" method="post">
+            <table width=300px height=400px>
+                <tr>
+                    <td>MedInc: </td>
+                    <td><input type="text" name="MedInc" required></td>
+                </tr>
+                <tr>
+                    <td>House Age: </td>
+                    <td><input type="floatformat" name="HouseAge" required></td>
+                </tr>
+                <tr>
+                    <td>Avg. Rooms: </td>
+                    <td><input type="floatformat" name="AveRooms" required></td>
+                </tr>
+                <tr>
+                    <td>Avg. Bedrooms: </td>
+                    <td><input type="floatformat" name="AveBedrms" required></td>
+                </tr>
+                <tr>
+                    <td>Population: </td>
+                    <td><input type="floatformat" name="Population" required></td>
+                </tr>
+                <tr>
+                    <td>Avg. Occupancy: </td>
+                    <td><input type="floatformat" name="AveOccup" required></td>
+                </tr>
+                <tr>
+                    <td>Latitude: </td>
+                    <td><input type="floatformat" name="Latitude" step="any" required></td>
+                </tr>
+                <tr>
+                    <td>Longitude: </td>
+                    <td><input type="floatformat" name="Longitude" step="any" required></td>
+                </tr>
+            </table>
+            <center>
+                <button type="submit" class="btn">Predict</button>
+                <a href="{{ url_for('home') }}" class="btn">New Prediction</a>
+            </center>
+        </form>
+        <div style="text-align:center; margin-top:20px;">
+            <h2>{{ prediction_text }}</h2>
+        </div>
+    </fieldset>
+</center>
 </body>
 </html>
