@@ -1,5 +1,5 @@
 # car-price-prediction
-
+This is a simple ML project where we have implimented full stack dev
 ### Softwares and Tools Requirements
 
 1. [Github Account](https://github.com)
